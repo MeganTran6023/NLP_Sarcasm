@@ -87,6 +87,7 @@ pip install {package}
 * nltk
 * scikit-learn
 * matplotlib.pyplot
+* xgboost
 
 ## 💭 Future Improvements
 
