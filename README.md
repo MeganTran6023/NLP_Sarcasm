@@ -2,9 +2,9 @@
 
 ## 🌟 Highlights
 
-- Improved accuracy of Random Forest Model from 59% to 62% through rigorous hyperparameter tuning of Random Forest Model.
-- Quickened the hyperparameter tuning and training process by reducing dataset from 27,000 items to 1000 items
-
+- KNN has the **highest** accuracy **(71%)** after determining best k - value.
+- Improved accuracy of Random Forest Model from **59% to 62%** through rigorous hyperparameter tuning of Random Forest Model.
+- XGBoost has **lowest** acccuracy **(59%)** after hyperparameter tuning via grid search.
 
 ## ℹ️ Overview
 
@@ -71,7 +71,59 @@ Classification report
 weighted avg       0.71      0.61      0.57       200
 
 ```
+**e) XGBoost**
 
+Best hyperparameters along with gini score:
+
+```
+ Best normalized gini score for 3-fold search with 3 parameter combinations:
+0.2894234737911132
+
+ Best hyperparameters:
+{'subsample': 0.6, 'min_child_weight': 1, 'max_depth': 3, 'gamma': 1.5, 'colsample_bytree': 0.8}
+
+```
+Results:
+
+```
+Classification report
+              precision    recall  f1-score   support
+
+           0       0.58      0.77      0.66       103
+           1       0.62      0.41      0.50        97
+
+    accuracy                           0.59       200
+   macro avg       0.60      0.59      0.58       200
+weighted avg       0.60      0.59      0.58       200
+
+
+```
+
+**f) KNN**
+
+Best hyperparameters (k-value):
+
+![image](https://github.com/user-attachments/assets/74952d87-9428-4f5d-a86f-33951f21e878)
+
+![image](https://github.com/user-attachments/assets/79cb6f39-bf33-426c-a442-e6fa67a544eb)
+
+In the project, k = 43
+
+Results:
+
+```
+Classification report
+              precision    recall  f1-score   support
+
+           0       0.66      0.88      0.76       102
+           1       0.81      0.53      0.64        98
+
+    accuracy                           0.71       200
+   macro avg       0.74      0.71      0.70       200
+weighted avg       0.74      0.71      0.70       200
+
+
+```
 
 ## ⬇️ Installation
 
@@ -91,5 +143,6 @@ pip install {package}
 
 ## 💭 Future Improvements
 
-* test dataset on other machine learning models to compare accuracies
+* Increase number of training samples
+* More steps to text feature preprocessing step
 
